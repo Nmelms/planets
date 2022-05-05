@@ -1,12 +1,20 @@
-import NavBar from "./componenets/NavBar.js"
-import Earth from "./componenets/Earth.js"
+import NavBar from "./components/NavBar.js"
+import Earth from "./components/Earth.js"
+import Mars from "./components/Mars.js"
+
+import {Routes, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
+
 function App() {
   return (
-    <div className=" App">
+    <Router>
       <NavBar />
-      <Earth className="vh-100"  />
+      <Routes>
+        <Route path="/earth" element={<Earth />} />
+        <Route path="/mars" element={<Mars />} />
+      </Routes>
 
-    </div>
+    </Router>
   );
 }
 
