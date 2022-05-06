@@ -24,3 +24,17 @@ code {
   padding-right: 5%;
   margin: 0
 }
+.earthImg{
+  position: absolute;
+  z-index: 1;
+  align-items: center;
+}
+.secondImg{
+  position: absolute;
+  z-index: 2;
+  align-self: flex-start;
+  margin-top: 70px;
+  height: 25%;
+  width: auto;
+  
+}

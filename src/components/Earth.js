@@ -16,21 +16,24 @@ export default function Earth() {
                 About 29.2% of Earth's surface is land with remaining 70.8% is 
                 covered with water. Earth's distance from the Sun, physical properties 
                 and geological history have allowed life to evolve and thrive.`,
-      pic: earthImg
+      pic: earthImg,
+      id: "overview"
     },
     internal: {
       text: `Earth's interior, like that of the other terrestrial planets, is divided 
       into layers by their chemical or physical (rheological) properties. The 
       outer layer is a chemically distinct silicate solid crust, which is 
       underlain by a highly viscous solid mantle.`,
-      pic: interalImg
+      pic: interalImg,
+      id: "internal"
     },
     surface: {
       text: `The total surface area of Earth is about 510 million km2. The continental 
       crust consists of lower density material such as the igneous rocks granite 
       and andesite. Less common is basalt, a denser volcanic rock that is the 
       primary constituent of the ocean floors.`,
-      pic: surfaceImg
+      pic: surfaceImg,
+      id: "surface"
 
     }
   }
@@ -38,15 +41,17 @@ export default function Earth() {
   const [des, setDes] = useState(info.overview)
 
 
-  
+  useEffect(() => {
+    console.log(des)
+  }, [des])
 
   return (
     <div className="page">
     <Row className="vh-100 d-flex ">
-      <Col stye={{position: 'fixed'}}  lg={7} className="align-items-center justify-content-center d-flex">
-        <img stye={{zIndex: 1}} src={earthImg}/>
-        <img stye={{zIndex: 2}} src={des.pic}/>
-   
+      <Col lg={7} className=" align-items-center justify-content-center d-flex">
+        {des.id === 'overview' && <img style={{position: 'absolute'}} src={info.overview.pic} />}
+        {des.id === 'internal' && <img style={{position: 'absolute'}} src={info.internal.pic} />}
+        {des.id === 'surface' && <div  lg={7} className="align-items-center justify-content-center d-flex"><img className="earthImg" src={info.overview.pic} /><img className="secondImg" src={info.surface.pic} /> </div>}
       </Col>
       <Col className=" d-flex page" lg={5}>
         <div className="d-flex flex-column align-items-start justify-content-center" >
