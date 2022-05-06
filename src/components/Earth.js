@@ -4,7 +4,6 @@ import earthImg from "../assets/planet-earth.svg"
 import interalImg from "../assets/planet-earth-internal.svg"
 import srcIcon from "../assets/icon-source.svg"
 import surfaceImg from "../assets/geology-earth.png"
-import Page from "./Page.js"
 import { ListGroup } from 'react-bootstrap'
 
 
@@ -17,7 +16,8 @@ export default function Earth() {
                 covered with water. Earth's distance from the Sun, physical properties 
                 and geological history have allowed life to evolve and thrive.`,
       pic: earthImg,
-      id: "overview"
+      id: "overview",
+      wiki: "https://en.wikipedia.org/wiki/Earth"
     },
     internal: {
       text: `Earth's interior, like that of the other terrestrial planets, is divided 
@@ -25,7 +25,8 @@ export default function Earth() {
       outer layer is a chemically distinct silicate solid crust, which is 
       underlain by a highly viscous solid mantle.`,
       pic: interalImg,
-      id: "internal"
+      id: "internal",
+      wiki: "https://en.wikipedia.org/wiki/Earth#Internal_structure"
     },
     surface: {
       text: `The total surface area of Earth is about 510 million km2. The continental 
@@ -33,17 +34,13 @@ export default function Earth() {
       and andesite. Less common is basalt, a denser volcanic rock that is the 
       primary constituent of the ocean floors.`,
       pic: surfaceImg,
-      id: "surface"
+      id: "surface",
+      wiki: "https://en.wikipedia.org/wiki/Earth#Surface"
 
     }
   }
 
   const [des, setDes] = useState(info.overview)
-
-
-  useEffect(() => {
-    console.log(des)
-  }, [des])
 
   return (
     <div className="page">
@@ -51,19 +48,23 @@ export default function Earth() {
       <Col lg={7} className=" align-items-center justify-content-center d-flex">
         {des.id === 'overview' && <img style={{position: 'absolute'}} src={info.overview.pic} />}
         {des.id === 'internal' && <img style={{position: 'absolute'}} src={info.internal.pic} />}
-        {des.id === 'surface' && <div  lg={7} className="align-items-center justify-content-center d-flex"><img className="earthImg" src={info.overview.pic} /><img className="secondImg" src={info.surface.pic} /> </div>}
+        {des.id === 'surface' && 
+          <div  lg={7} className="align-items-center justify-content-center d-flex">
+            <img className="earthImg" src={info.overview.pic} />
+            <img className="secondImg" src={info.surface.pic} />
+          </div>}
       </Col>
       <Col className=" d-flex page" lg={5}>
         <div className="d-flex flex-column align-items-start justify-content-center" >
         <h1>EARTH</h1>
         <p>{des.text}</p>
-        <h3>Source : <a href="https://en.wikipedia.org/wiki/Earth">Wikipedia</a>
-            <img src={srcIcon} />
+        <h3>Source : <a href={des.wiki}>Wikipedia</a>
+            <img  src={srcIcon} />
         </h3>
-        <ListGroup className="w-100">
-          <ListGroup.Item style={{border: '2px solid black'}} className=" mb-2" action onClick={() => setDes(info.overview)}>OverView</ListGroup.Item>
-          <ListGroup.Item style={{border: '2px solid black'}} className=" mb-2" action onClick={() => setDes(info.internal)}>Internaaaaa</ListGroup.Item>
-          <ListGroup.Item style={{border: '2px solid black'}} className=" mb-2" action onClick={() => setDes(info.surface)}>Surface</ListGroup.Item>
+        <ListGroup className="list w-100">
+          <ListGroup.Item style={{border: '2px solid black'}} className=" bg-transparent listItem mb-2" action onClick={() => setDes(info.overview)}>OverView</ListGroup.Item>
+          <ListGroup.Item style={{border: '2px solid black'}} className=" bg-transparent listItem mb-2" action onClick={() => setDes(info.internal)}>Internaaaaa</ListGroup.Item>
+          <ListGroup.Item style={{border: '2px solid black'}} className=" bg-transparent listItem mb-2" action onClick={() => setDes(info.surface)}>Surface</ListGroup.Item>
         </ListGroup>
         
         </div>

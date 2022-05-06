@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 
 export default function NavBar() {
   return (
-    <div>
-      <Navbar className="p-3 bg-dark" bg="light" >
-        <Row className="w-100">
+    <div  >
+      <Navbar variant="dark" className="p-3 bg-transparent border-bottom"  >
+        <Row className="navBar" className="w-100">
           <Col className="pl-5">
           <Navbar.Brand className="ml-2" href="#home">THE PLANETS</Navbar.Brand>
           </Col>
@@ -16,7 +16,7 @@ export default function NavBar() {
             <Nav className=" d-flex">
               <Nav.Link href="">MERCURY</Nav.Link>
               <Nav.Link href="">VENUS</Nav.Link>
-              <Nav.Link href="">EARTH</Nav.Link>
+              <Nav.Link href="/earth">EARTH</Nav.Link>
               <Nav.Link href="">MARS</Nav.Link>
               <Nav.Link href="">JUPITER</Nav.Link>
               <Nav.Link href="">SATURN</Nav.Link>

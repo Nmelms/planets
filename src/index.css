@@ -1,6 +1,19 @@
 body {
   margin: 0;
   overflow: hidden;
+  background-color: #070724 !important;
+  background-image: url('./assets/background-stars.svg');
+  color: #FFFFFF;
+}
+.navBar{
+  background-color: #070724;
+  background-image: url('./assets/background-stars.svg');
+  color: #FFFFFF;
+}
+
+.listItem:hover{
+  background-color: #2A2D80 !important;
+
 }
 
 
