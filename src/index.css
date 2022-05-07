@@ -4,17 +4,27 @@ body {
   background-color: #070724 !important;
   background-image: url('./assets/background-stars.svg');
   color: #FFFFFF;
+  font-family: 'Antonio', sans-serif;
+
 }
+window{
+  background-color: #070724 !important;
+}
+
 .navBar{
   background-color: #070724;
   background-image: url('./assets/background-stars.svg');
   color: #FFFFFF;
+}
+.earthImg{
+  padding: 100px;
 }
 
 .listItem:hover{
   background-color: #2A2D80 !important;
 
 }
+
 
 
 code {
@@ -24,12 +34,18 @@ code {
 
 .boxItem{
   border: 2px solid black;
-  width: 50px;
-  height: 50%
+  width: auto;
+  height: 150px;
+  margin-top: 200px;
+}
+.boxItem h1{
+  margin: 1em;
+
 }
 
 .bottomRow{
   display: flex;
+  padding-top: 100px;
 
 }
 .page{

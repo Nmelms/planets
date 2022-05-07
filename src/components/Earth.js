@@ -39,7 +39,6 @@ export default function Earth() {
 
     }
   }
-
   const [des, setDes] = useState(info.overview)
 
   return (
@@ -57,41 +56,41 @@ export default function Earth() {
       <Col className=" d-flex page" lg={5}>
         <div className="d-flex flex-column align-items-start justify-content-center" >
         <h1>EARTH</h1>
-        <p>{des.text}</p>
+        <p style={{height: '150px'}} >{des.text}</p>
         <h3>Source : <a href={des.wiki}>Wikipedia</a>
             <img  src={srcIcon} />
         </h3>
         <ListGroup className="list w-100">
-          <ListGroup.Item style={{border: '2px solid black'}} className=" bg-transparent listItem mb-2" action onClick={() => setDes(info.overview)}>OverView</ListGroup.Item>
-          <ListGroup.Item style={{border: '2px solid black'}} className=" bg-transparent listItem mb-2" action onClick={() => setDes(info.internal)}>Internaaaaa</ListGroup.Item>
-          <ListGroup.Item style={{border: '2px solid black'}} className=" bg-transparent listItem mb-2" action onClick={() => setDes(info.surface)}>Surface</ListGroup.Item>
+          <ListGroup.Item  className=" border-top border-dark bg-transparent listItem mb-2" action onClick={() => setDes(info.overview)}>OverView</ListGroup.Item>
+          <ListGroup.Item  className=" border-top border-dark bg-transparent listItem mb-2" action onClick={() => setDes(info.internal)}>Internaaaaa</ListGroup.Item>
+          <ListGroup.Item  className=" border-top border-dark bg-transparent listItem mb-2" action onClick={() => setDes(info.surface)}>Surface</ListGroup.Item>
         </ListGroup>
         
         </div>
         </Col>
         <Row className="bottomRow">
-            <Col className="boxItem m-4 w-25">
-              <div>
-                <h5>Rotation Time</h5>
+            <Col className="boxItem border-dark m-4 w-25">
+              <div className="mt-4">
+                <h6 >ROTATION TIME</h6>
                 <h1>0.99 Days</h1>
               </div>
             </Col>
-            <Col className="boxItem m-4 w-25">
-              <div>
-                <h5>Revolution Time</h5>
+            <Col className="boxItem border-dark m-4 w-25">
+              <div className="mt-4">
+                <h5>REVOLUTION TIME</h5>
                 <h1>365.26 Days</h1>
               </div>
             </Col>
-            <Col className="boxItem m-4 w-25">
-              <div>
-                <h5>Radius</h5>
+            <Col className="boxItem border-dark m-4 w-25">
+              <div className="mt-4">
+                <h5>RADIUS</h5>
                 <h1>6,371 KM</h1>
               </div>
             </Col>
-            <Col className="boxItem m-4 w-25">
-              <div>
-                <h5>Average Temp.</h5>
-                <h1>16°c</h1>
+            <Col className="boxItem border-dark m-4 w-25">
+              <div className="mt-4">
+                <h5>AVERAGE TEMP.</h5>
+                <h1>16°C</h1>
               </div>
             </Col>
         </Row>
