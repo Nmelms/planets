@@ -35,8 +35,9 @@ code {
 .boxItem{
   border: 2px solid black;
   width: auto;
-  height: 150px;
-  margin-top: 200px;
+  height: 60%;
+  overflow: hidden;
+  align-items: flex-start;
 }
 .boxItem h1{
   margin: 1em;
@@ -45,8 +46,8 @@ code {
 
 .bottomRow{
   display: flex;
-  padding-top: 100px;
-
+  align-items: flex-start;
+  overflow-y: hidden
 }
 .page{
   padding-left: 5%;

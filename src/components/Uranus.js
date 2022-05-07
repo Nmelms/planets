@@ -41,9 +41,9 @@ export default function Venus() {
 
   const [des, setDes] = useState(info.overview)
   return (
-    <div className="page">
+    <div style={{postion: "relative"}} className="page">
     <Row className="vh-100 d-flex ">
-      <Col lg={7} className=" align-items-center justify-content-center d-flex">
+      <Col stye={{position: 'absolute'}} lg={7} className=" h-75 align-items-center  justify-content-center d-flex">
         {des.id === 'overview' && <img style={{position: 'absolute'}} src={info.overview.pic} />}
         {des.id === 'internal' && <img style={{position: 'absolute'}} src={info.internal.pic} />}
         {des.id === 'surface' && 
@@ -52,14 +52,14 @@ export default function Venus() {
             <img className="secondImg" src={info.surface.pic} />
           </div>}
       </Col>
-      <Col className=" d-flex page" lg={5}>
+      <Col stye={{position: 'absolute'}} className=" d-flex page" lg={5}>
         <div className="d-flex flex-column align-items-start justify-content-center" >
-        <h1>VENUS</h1>
+        <h1>URANUS</h1>
         <p style={{height: '150px'}} >{des.text}</p>
         <h3>Source : <a href={des.wiki}>Wikipedia</a>
             <img  src={srcIcon} />
         </h3>
-        <ListGroup className="list w-100">
+        <ListGroup className="h-25 list w-100">
           <ListGroup.Item  className=" border-top border-dark bg-transparent listItem mb-2" action onClick={() => setDes(info.overview)}>OverView</ListGroup.Item>
           <ListGroup.Item  className=" border-top border-dark bg-transparent listItem mb-2" action onClick={() => setDes(info.internal)}>Internaaaaa</ListGroup.Item>
           <ListGroup.Item  className=" border-top border-dark bg-transparent listItem mb-2" action onClick={() => setDes(info.surface)}>Surface</ListGroup.Item>
@@ -67,26 +67,26 @@ export default function Venus() {
         
         </div>
         </Col>
-        <Row className="bottomRow">
-            <Col className="boxItem border-dark m-4 w-25">
+        <Row className="bottomRow h-25 align-items-start">
+            <Col className="boxItem border-dark mx-2 w-25">
               <div className="mt-4">
                 <h6 >ROTATION TIME</h6>
                 <h1>243 Days</h1>
               </div>
             </Col>
-            <Col className="boxItem border-dark m-4 w-25">
+            <Col className="boxItem border-dark mx-2 w-25">
               <div className="mt-4">
                 <h5>REVOLUTION TIME</h5>
                 <h1>84 Years</h1>
               </div>
             </Col>
-            <Col className="boxItem border-dark m-4 w-25">
+            <Col className="boxItem border-dark mx-2 w-25">
               <div className="mt-4">
                 <h5>RADIUS</h5>
                 <h1>25,362 KM</h1>
               </div>
             </Col>
-            <Col className="boxItem border-dark m-4 w-25">
+            <Col className="boxItem border-dark mx-2 w-25">
               <div className="mt-4">
                 <h5>AVERAGE TEMP.</h5>
                 <h1>-195°C</h1>
