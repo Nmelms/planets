@@ -10,7 +10,7 @@ export default function NavBar() {
       <Navbar variant="dark" className="p-3 bg-transparent border-dark border-bottom"  >
         <Row className="navBar" className="w-100">
           <Col className="pl-5">
-          <Navbar.Brand className="ml-2" href="#home">THE PLANETS</Navbar.Brand>
+          <Navbar.Brand className="ml-2" href="/">THE PLANETS</Navbar.Brand>
           </Col>
           <Col className="d-flex justify-content-end" >
             <Nav className=" d-flex">

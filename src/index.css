@@ -24,6 +24,9 @@ window{
   background-color: #2A2D80 !important;
 
 }
+.listItem{
+  color: white;
+}
 
 
 
@@ -35,19 +38,14 @@ code {
 .boxItem{
   border: 2px solid black;
   width: auto;
-  height: 60%;
-  overflow: hidden;
-  align-items: flex-start;
-}
-.boxItem h1{
-  margin: 1em;
+  height: 150px;
 
 }
-
 .bottomRow{
   display: flex;
-  align-items: flex-start;
-  overflow-y: hidden
+  
+
+
 }
 .page{
   padding-left: 5%;
