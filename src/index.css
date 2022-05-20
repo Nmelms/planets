@@ -1,68 +1,184 @@
 body {
-  margin: 0;
-  overflow: hidden;
-  background-color: #070724 !important;
-  background-image: url('./assets/background-stars.svg');
-  color: #FFFFFF;
-  font-family: 'Antonio', sans-serif;
-
-}
-window{
-  background-color: #070724 !important;
-}
-
-.navBar{
   background-color: #070724;
   background-image: url('./assets/background-stars.svg');
   color: #FFFFFF;
+  font-family: 'Antonio', sans-serif;
 }
-.earthImg{
-  padding: 100px;
+.navBar{
+  color: #FFFFFF;
 }
 
+.planetDiv{
+  grid-area: pic;
+  height: 75%
+}
+.details{
+  grid-area: details;
+  height: 75%
+}
+.stats{
+  grid-area: stats;
+}
+.infoSelect{
+  grid-area: infoSelect;
+}
+.footer{
+  justify-self: end;
+  grid-area: footer;
+  display: flex;
+  height: auto;
+  border: 2px solid black;  
+}
 .listItem:hover{
   background-color: #2A2D80 !important;
-
 }
 .listItem{
   color: white;
 }
-
-
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.boxItem{
-  border: 2px solid black;
-  width: auto;
-  height: 150px;
+@media screen and (max-width: 768px) {
 
-}
-.bottomRow{
-  display: flex;
+  .nav{
+    display: none !important;
+  }
+ .infoSelect{
+   display: flex;
+    justify-content: space-around;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 2%;
+ }
+ .planetDiv{
+   height: 30vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .planetImg{
+   width: 30%
+ }
+ .descriptBox{
+   height: auto;
+   overflow-y: hidden;
+ }
+ h1{
+   text-align: center;
+ }
+ .stats{
+   height: 30vh;
+ }
+ .stats>div{
+   display: flex;
+   border: 2px solid black;
+   margin-top: 5%;
+   
+ }
+ .stats>div>h3{
+   position: absolute;
+   right: 0;
+   float: right;
   
+   
+ }
 
+}
 
-}
-.page{
-  padding-left: 5%;
-  padding-right: 5%;
-  margin: 0
-}
-.earthImg{
-  position: absolute;
-  z-index: 1;
-  align-items: center;
-}
-.secondImg{
-  position: absolute;
-  z-index: 2;
-  align-self: flex-start;
-  margin-top: 70px;
-  height: 25%;
-  width: auto;
-  
+@media screen and (min-width: 768px ) {
+
+  .wrapper{
+    overflow: hidden;
+    height: 90vh;
+    max-height: 1024px;
+    display: grid;
+        grid-template-rows: 30% 50% 10%;
+    grid-template-columns: 50% 50%;
+
+    grid-template-areas:
+      "pic pic"
+      "details infoSelect"
+      "stats stats";
+  }
+  .infoSelect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .infoSelectItem{
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-left: 1rem;;
+    padding: 1rem;
+    border: 1px solid gold;
+    width: 100%;
+  }
+  .infoSelectItem:hover{
+    background-color: purple;
+  }
+  .planetDiv{
+    height: 100%;
+  }
+  .descriptBox{
+    padding: 1rem;
+    overflow: auto;
+  }
+  .descriptBox>p{
+    padding-top: 2rem;
+    max-height: 30%;
+    text-size-adjust: auto;
+  }
+
+  .stats{
+    display: flex;
+    justify-content: space-between;
+    max-height: 45vh;
+    width: 100vw;
+    padding: .5rem;
+  }
+  .statsItem{
+    max-height: 4%;
+    overflow: hidden;
+    border: 1px solid gray;
+    width: 25%;
+    margin: .5rem;
+    
+  }
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .planetDiv{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .planetImg{
+    height: 90%;
+  }
+  .navTitle{
+    text-align: center;
+  }
+  .navBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 10vh;
+  }
+  .stats{
+    display: flex;
+    position: absolute;
+    align-self: flex-end;
+  }
+  .details{
+    height: 30vh;
+    font-size: 5vh;
+    
+  }
 }
