@@ -19,12 +19,12 @@ function App() {
       <Routes>
         <Route data={data} path="/" element={<Earth data={data[2]} />} />
         <Route path="/mars" element={<Mars data={data[3]} />} />
-        <Route path="/mercury" element={<Mercury />} />
-        <Route path="/venus" element={<Venus />} />
+        <Route path="/mercury" element={<Mercury data={data[0]} />} />
+        <Route path="/venus" element={<Venus data={data[1]} />} />
         <Route path="/jupiter" element={<Jupiter data={data[4]} />} />
-        <Route path="/Saturn" element={<Saturn />} />
-        <Route path="/Neptune" element={<Neptune />} />
-        <Route path="/Uranus" element={<Uranus />} />
+        <Route path="/Saturn" element={<Saturn data={data[5]}/>} />
+        <Route path="/Neptune" element={<Neptune data={data[7]}/>} />
+        <Route path="/Uranus" element={<Uranus data={data[6]} />} />
       </Routes>
     </Router>
   );

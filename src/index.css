@@ -12,7 +12,7 @@ body {
   grid-area: pic;
   height: 75%
 }
-.details{
+.descriptBox{
   grid-area: details;
   height: 75%
 }
@@ -40,7 +40,9 @@ code {
     monospace;
 }
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (min-width: 1px) and (max-width: 768px) {
 
   .nav{
     display: none !important;
@@ -87,7 +89,7 @@ code {
 
 }
 
-@media screen and (min-width: 768px ) {
+@media screen and (min-width: 769px ) and (max-width: 1439px) {
 
   .wrapper{
     overflow: hidden;
@@ -181,4 +183,60 @@ code {
     font-size: 5vh;
     
   }
+}
+
+@media screen and (min-width: 1440px){
+  .infoSelectItem{
+    height: 20%;
+    border: 1px solid gray;
+    margin-top: 1rem;
+  }
+  .descriptBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%
+  }
+  .planetDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4rem;
+    height: 100%
+  }
+  .navTitle{
+    width: 25vw;
+  }
+  .navCol{
+    width: 70vw;
+  }
+  .navBar{
+    height: 50px;
+  }
+  .nav{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .wrapper{
+    padding: 0% 10% 0% 10%;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40vh 40vh 10vh;
+    grid-template-areas: 
+      "pic details"
+      "pic infoSelect"
+      "stats stats";
+    height: 90vh;
+  }
+  .stats{
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+  }
+  .statsItem{
+    border: 1px solid gray;
+    width: 24%
+  }
+
 }

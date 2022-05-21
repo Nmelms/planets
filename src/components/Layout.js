@@ -16,6 +16,7 @@ export default function Layout({ data, planetImg }) {
   return (
 
     <div className="wrapper">
+
       <div className="infoSelect">
         <div className="infoSelectItem">
           <a href="">STRUCTURE</a>
@@ -56,7 +57,6 @@ export default function Layout({ data, planetImg }) {
         <br/> 
           Source: <a href=''>Wikipedia</a>
         </p>
-  
       </div>
 
       <div className="stats">
