@@ -7,6 +7,7 @@ import Jupiter from "./components/Jupiter"
 import Saturn from "./components/Saturn"
 import Neptune from "./components/Neptune"
 import Uranus from "./components/Uranus"
+import MobileMenu from "./components/MobileMenu"
 import {Routes, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import data from './data/data.json'
@@ -14,13 +15,18 @@ import {useState } from 'react'
 
 
 function App() {
+  const[menuActive, setMenuActive] = useState(false)
+  const handleClick = () => {
+    setMenuActive(!menuActive)
+  }
   
-  
+
   return (
 
 
     <Router >
-      <NavBar />
+      <NavBar handleClick={handleClick}/>
+      {menuActive && <MobileMenu />}
       <Routes>
         <Route data={data} path="/" element={<Earth data={data[2]} />} />
         <Route path="/mars" element={<Mars data={data[3]} />} />

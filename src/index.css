@@ -43,10 +43,31 @@ code {
 
 
 @media screen and (min-width: 1px) and (max-width: 768px) {
+  .iconCol{
+    width: 100vw !important
+  }
+  .hamburgerIcon{
+    height: auto;
+    width: 10vw;
+    margin-left: auto;
+  }
+  .hamburgerIcon:hover{
+    cursor: pointer;
+  }
+  .wrapper{
+    display: grid;
+    grid-template-areas: 
+    "infoSelect"
+    "pic"
+    "details"
+    "stats";
+  }
   .surfaceImg{
     position: absolute;
-    height: 10%;
-    margin-top: 12rem;
+    align-self: flex-end;
+    z-index: 1;
+    height: 30%;
+    margin-bottom: 2rem;
     
   }
   .nav{
@@ -60,15 +81,19 @@ code {
     padding: 2%;
  }
  .planetDiv{
-   height: 30vh;
+   height: 50vh;
    display: flex;
+   position: relative;
    justify-content: center;
    align-items: center;
+   background-size: contain;
  }
  .planetImg{
-   width: 30%
+   position:absolute;
+   transform: scale(.4);
  }
  .descriptBox{
+   padding-top: 1rem;
    height: auto;
    overflow-y: hidden;
  }
@@ -114,6 +139,8 @@ code {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 1rem;
+    max-height: 90%;
 
   }
   .infoSelectItem{
@@ -123,6 +150,7 @@ code {
     padding: 1rem;
     border: 1px solid gold;
     width: 100%;
+   
   }
   .infoSelectItem:hover{
     background-color: purple;
@@ -133,6 +161,7 @@ code {
   .descriptBox{
     padding: 1rem;
     overflow: auto;
+    height: 100%
   }
   .descriptBox>p{
     padding-top: 2rem;
@@ -143,12 +172,12 @@ code {
   .stats{
     display: flex;
     justify-content: space-between;
-    max-height: 45vh;
+    max-height: 40vh;
     width: 100vw;
     padding: .5rem;
   }
   .statsItem{
-    max-height: 4%;
+    max-height: 3%;
     overflow: hidden;
     border: 1px solid gray;
     width: 25%;
@@ -241,6 +270,7 @@ code {
   }
   .statsItem{
     border: 1px solid gray;
+    max-height: 100%;
     width: 24%
   }
 

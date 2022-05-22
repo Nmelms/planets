@@ -1,16 +1,20 @@
 import React from 'react'
 import {Navbar, Row, Col, Container, Nav} from 'react-bootstrap'
+import hamburgerIcon from '../assets/icon-hamburger.svg'
 import { Link } from "react-router-dom"
 
 
 
-export default function NavBar() {
+export default function NavBar({handleClick}) {
+
+ 
   return (
     <div  >
       <Navbar  variant="dark" className="p-3 navBar h-25  border-dark border-bottom"  >
         <Row className=" d-flex navRow justify-content-center" className="w-100">
-          <Navbar.Brand className="align-self-center navTitle ml-2" href="/">THE PLANETS</Navbar.Brand>
-          <Col className="d-flex navCol justify-content-center" >
+         <Col className="d-flex navCol" >
+          <Navbar.Brand className="align-self-start navTitle ml-2" href="/">THE PLANETS</Navbar.Brand>
+            <img onClick={() => handleClick()} className="hamburgerIcon" src={hamburgerIcon} />
             <Nav className="nav vw-100  d-flex">
               <Nav.Link className="navLink" href="/mercury">MERCURY</Nav.Link>
               <Nav.Link className="navLink" href="/venus">VENUS</Nav.Link>
