@@ -10,10 +10,15 @@ import Uranus from "./components/Uranus"
 import {Routes, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import data from './data/data.json'
+import {useState } from 'react'
 
 
 function App() {
+  
+  
   return (
+
+
     <Router >
       <NavBar />
       <Routes>

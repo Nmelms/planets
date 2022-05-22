@@ -9,23 +9,28 @@ import NavBar from "./NavBar.js"
 
 
 
-export default function Layout({ data, planetImg }) {
-  const [des, setDes] = useState('')
-  console.log(data)
+export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
+  const [description, setDescription] = useState(data.overview.content)
+  const [source, setSource] = useState(data.overview.source)
+  
+  const handleClick = (content, source) =>{
+    setDescription(content)
+    setSource(source)
+
+  }
 
   return (
-
     <div className="wrapper">
 
       <div className="infoSelect">
         <div className="infoSelectItem">
-          <a href="">STRUCTURE</a>
+          <button onClick={() => handleClick(data.overview.content, data.overview.source)} > STRUCTURE</button>
+        </div>
+        <div  className="infoSelectItem">
+          <button onClick={() => handleClick(data.structure.content, data.structure.source)} >OVERVIEW</button>
         </div>
         <div className="infoSelectItem">
-          <a  href="">OVERVIEW</a>
-        </div>
-        <div className="infoSelectItem">
-          <a href="">SURFACE</a>
+        <button onClick={() => handleClick(data.geology.content, data.geology.source)} >SURFACE</button>.
         </div>
       </div>
 
@@ -40,22 +45,21 @@ export default function Layout({ data, planetImg }) {
           <a href="">SATURN</a>
           <a href="">URANUS</a>
           <a href="">NEPTUNE</a>
-        </div>
-
-            
-
+        </div>     
       </div>
-
+      
       <div className="planetDiv">
-        <img className="planetImg" src={planetImg} />
+        {description === data.overview.content && <img className="planetImg" src={planetImg} />}
+        {description === data.structure.content && <img className="planetImg" src={internalImg} />}
+        {description === data.geology.content &&  <><img className="planetImg" src={planetImg} /> <img className="surfaceImg" src={surfaceImg} /></>}
       </div>
 
       <div className="descriptBox">
         <h1>{data.name}</h1>
-        <p>{data.overview.content}
+        <p>{description}
         <br/> 
         <br/> 
-          Source: <a href=''>Wikipedia</a>
+          Source: <a href={source}>Wikipedia</a>
         </p>
       </div>
 
