@@ -8,34 +8,40 @@ import Saturn from "./components/Saturn"
 import Neptune from "./components/Neptune"
 import Uranus from "./components/Uranus"
 import MobileMenu from "./components/MobileMenu"
-import {Routes, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Routes, BrowserRouter as Router, Switch, Route, Navigate} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import data from './data/data.json'
-import {useState } from 'react'
+import {useState, useEffect } from 'react'
 
 
 function App() {
   const[menuActive, setMenuActive] = useState(false)
+
+  useEffect(() => {
+    if(menuActive){
+      document.querySelector(".wrapper").style.display = 'none'
+    }else{
+      document.querySelector(".wrapper").style.display = 'grid'
+    }
+      },[menuActive])
+
   const handleClick = () => {
     setMenuActive(!menuActive)
   }
-  
-
+    
   return (
-
-
     <Router >
       <NavBar handleClick={handleClick}/>
-      {menuActive && <MobileMenu />}
+      {menuActive && <MobileMenu menuActive={menuActive} setMenuActive={setMenuActive} data={data} />}
       <Routes>
-        <Route data={data} path="/" element={<Earth data={data[2]} />} />
+        <Route path="/" element={<Earth data={data[2]} />} />
         <Route path="/mars" element={<Mars data={data[3]} />} />
         <Route path="/mercury" element={<Mercury data={data[0]} />} />
         <Route path="/venus" element={<Venus data={data[1]} />} />
         <Route path="/jupiter" element={<Jupiter data={data[4]} />} />
-        <Route path="/Saturn" element={<Saturn data={data[5]}/>} />
-        <Route path="/Neptune" element={<Neptune data={data[7]}/>} />
-        <Route path="/Uranus" element={<Uranus data={data[6]} />} />
+        <Route path="/saturn" element={<Saturn data={data[5]}/>} />
+        <Route path="/neptune" element={<Neptune data={data[7]}/>} />
+        <Route path="/uranus" element={<Uranus data={data[6]} />} />
       </Routes>
     </Router>
   );
