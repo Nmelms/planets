@@ -3,6 +3,7 @@ body {
   background-image: url('./assets/background-stars.svg');
   color: #FFFFFF;
   font-family: 'Antonio', sans-serif;
+  margin: 0;
 }
 .navBar{
   color: #FFFFFF;
@@ -10,11 +11,11 @@ body {
 
 .planetDiv{
   grid-area: pic;
-  height: 75%
+
 }
 .descriptBox{
   grid-area: details;
-  height: 75%
+
 }
 .stats{
   grid-area: stats;
@@ -22,27 +23,26 @@ body {
 .infoSelect{
   grid-area: infoSelect;
 }
-.footer{
-  justify-self: end;
-  grid-area: footer;
-  display: flex;
-  height: auto;
-  border: 2px solid black;  
-}
 .listItem:hover{
   background-color: #2A2D80 !important;
 }
 .listItem{
   color: white;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 
 
 @media screen and (min-width: 1px) and (max-width: 768px) {
+  .chevron{
+    margin-left: auto;
+    padding-bottom: 2rem;
+  }
+  .menu{
+    padding: 0 2rem 0 2rem;
+  }
+  .srcIcon{
+    padding-left: .1rem;
+  }
 
   button{
     background: transparent;
@@ -52,25 +52,20 @@ code {
   .infoSelectItem:hover button{
     color:white
   }
-  .active{
-    border: 2px solid green;
-  }
+
   
-  .wrapper{
-    padding: 1rem;
-  }
+
   .svg{
     height: min-content;
   }
-  .mobilePlanet:hover{
-    background-color: red;
-  }
+
 
   .mobilePlanet{
     display: flex;
     align-items: flex-end;
     padding-bottom: 1rem;
-    border-bottom: 1px solid gray;
+
+    border-bottom: 1px solid #38384F;
     font-family: 'League Spartan', sans-serif;
     padding: 0 1rem 0 1rem;
   }
@@ -86,44 +81,53 @@ code {
     cursor: pointer;
   }
   .wrapper{
+ 
     display: grid;
     grid-template-areas: 
     "infoSelect"
     "pic"
     "details"
     "stats";
-  }
-  .surfaceImg{
-    position: absolute;
-    align-self: flex-end;
     z-index: 1;
-    height: 20%;
-    margin-bottom: 6rem;
-    
   }
+
   .nav{
     display: none !important;
    
   }
  .infoSelect{
-   display: flex;
+    display: flex;
     justify-content: space-around;
     border-bottom: 1px solid #38384F;
-    margin: -1rem;
+    width: 100vw;
+    margin-left: 0;
+
+
  }
  .planetDiv{
-   height: 40vh;
-   display: flex;
    position: relative;
+   height: 50vh;
+   display: flex;
    justify-content: center;
    align-items: center;
-   background-size: contain;
  }
  .planetImg{
-   position:absolute;
-   transform: scale(.4);
+   transform: scale(.8);
+   padding:0;
+  max-height: 100%;
+  max-width: 100%;
+   margin: 0
  }
+ .surfaceImg{
+  position: absolute;
+  align-self: flex-end;
+  z-index: 1;
+  height: 30%;
+  margin-bottom: 2rem;
+  
+}
  .descriptBox{
+   padding: 1rem;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -144,6 +148,7 @@ code {
  }
  .stats{
    height: 30vh;
+   padding: 1rem;
 
  }
  .stats>div{
@@ -171,86 +176,118 @@ code {
 }
 
 @media screen and (min-width: 769px ) and (max-width: 1439px) {
+  .navCol{
+    flex-direction: column;
+    align-items: center;
+  }
+
 
   .wrapper{
-    overflow: hidden;
-    height: 90vh;
-    max-height: 1024px;
     display: grid;
-        grid-template-rows: 30% 50% 10%;
-    grid-template-columns: 50% 50%;
-
+    grid-template-rows: 30vh 48vh 12vh;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "pic pic"
       "details infoSelect"
       "stats stats";
+  }
+  .hamburgerIcon{
+    display: none;
   }
   .infoSelect{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 1rem;
+    margin: 0 2rem;
     max-height: 90%;
 
   }
   .infoSelectItem{
+    display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
-    margin-right: 2rem;
-    margin-left: 1rem;;
-    padding: 1rem;
-    border: 1px solid gold;
     width: 100%;
+
    
   }
-  .infoSelectItem:hover{
-    background-color: purple;
-  }
-  .planetDiv{
+  .infoSelectItem button{
+    display: flex;
+    margin-left: 5rem;
     height: 100%;
+    padding: .5em;
+    width: 100%;
+    background-color: transparent;
+    border-color: #38384F !important;
+    color: white;
+    font-size: clamp(1rem, 1vw + 1rem, 3rem)
   }
+  .infoSelectItem>button>div{
+    margin-left: 2rem;
+  }
+
+
   .descriptBox{
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    padding: 0 2rem;
+    justify-content: center;
+
     overflow: auto;
-    height: 100%
   }
   .descriptBox>p{
+    font-family: 'League Spartan', sans-serif;
     padding-top: 2rem;
-    max-height: 30%;
-    text-size-adjust: auto;
+    font-size: clamp(.25rem, 1vw + 1rem, 2rem);
+    max-height: 100%;
+  }
+  .surfaceImg{
+    position: absolute;
+    z-index: 2;
+    max-height: 10%;
+    margin-top: 10rem;
   }
 
   .stats{
+    margin: 0 1rem;
     display: flex;
     justify-content: space-between;
-    max-height: 40vh;
-    width: 100vw;
-    padding: .5rem;
+    max-height: 100%;
+    margin-bottom: 1rem;
   }
   .statsItem{
-    max-height: 3%;
-    overflow: hidden;
     border: 1px solid gray;
     width: 25%;
-    margin: .5rem;
-    
+    margin: 0 1rem;
+  }
+  .statsItem h3{
+    font-size: clamp(.5rem, 1vw + 1.5rem, 5rem)
+  }
+  .statsItem h4{
+    font-size: clamp(.5rem, 1vw + 1rem, 5rem)
   }
   .nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
 
   .planetDiv{
+
     display:flex;
     justify-content: center;
     align-items: center;
   }
   .planetImg{
-    height: 90%;
+    padding: 2rem;
+    max-height: 100%;
+   
   }
+
   .navTitle{
     text-align: center;
+    width: 100vw;
   }
   .navBar{
     display: flex;
@@ -258,14 +295,7 @@ code {
     justify-content: center;
     max-height: 10vh;
   }
-  .stats{
-    display: flex;
-    position: absolute;
-    align-self: flex-end;
-  }
-  .details{
-    height: 30vh;
-    font-size: 5vh;
+  .statsItem{
     
   }
 }

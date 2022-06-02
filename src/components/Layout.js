@@ -9,10 +9,11 @@ import NavBar from "./NavBar.js"
 
 
 
+
 export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
   const [description, setDescription] = useState(data.overview.content)
   const [source, setSource] = useState(data.overview.source)
-  const [activeElement, setActiveElement] = useState('structure')
+  const [activeElement, setActiveElement] = useState('overview')
 
   
   
@@ -23,25 +24,26 @@ export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
   
 }
 
-  const handleFocus = (event) => {
-    console.log('he')
-    
+  const mouseOver = (e) => {
+    e.target.style.background =  `${data.color}`
+    console.log('over')
   }
-  const handleBlur = (event) => {
-    console.log(event.target)
+  const mouseLeave =(e) => {
+    e.target.style.background = 'none'
+  }
 
-  }
   return (
     <div className="wrapper">
+      
       <div className="infoSelect">
         <div className="infoSelectItem">
-          <button style={{borderBottom: activeElement === "structure" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.overview.content, data.overview.source, 'structure')} id="structure" > STRUCTURE</button>
+          <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "overview" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.overview.content, data.overview.source, 'overview')} id="overview" >01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OVERVIEW</button>
         </div>
         <div  className="infoSelectItem">
-          <button style={{borderBottom: activeElement === "overview" ? `2px solid ${data.color}` : ''}}   onClick={() => handleClick(data.structure.content, data.structure.source, 'overview')} id="overview" >OVERVIEW</button>
+          <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "structure" ? `2px solid ${data.color}` : ''}}   onClick={() => handleClick(data.structure.content, data.structure.source, 'structure')} id="structure" >02&nbsp;&nbsp;&nbsp;&nbsp; STRUCTURE</button>
         </div>
         <div className="infoSelectItem">
-        <button style={{borderBottom: activeElement === "surface" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.geology.content, data.geology.source,'surface')} id="surface" >SURFACE</button>
+        <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "surface" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.geology.content, data.geology.source,'surface')} id="surface">03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SURFACE</button>
         </div>
       </div>
 
@@ -68,7 +70,7 @@ export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
       <div className="descriptBox">
         <h2>{data.name.toUpperCase()}</h2>
         <p>{description}</p>
-        <p>Source: <a href={source}>Wikipedia</a></p>       
+        <p className="source">Source: <a href={source}>Wikipedia</a> <img className="srcIcon" src={srcIcon} /></p>       
       </div>
 
       <div className="stats">
