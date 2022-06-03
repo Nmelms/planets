@@ -121,9 +121,9 @@ body {
    align-items: center;
  }
  .planetImg{
-   transform: scale(.8);
+   transform: scale(.5) !important;
    padding:0;
-  max-height: 100%;
+
   max-width: 100%;
    margin: 0
  }
