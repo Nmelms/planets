@@ -37,13 +37,13 @@ export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
       
       <div className="infoSelect">
         <div className="infoSelectItem">
-          <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "overview" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.overview.content, data.overview.source, 'overview')} id="overview" >01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OVERVIEW</button>
+          <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "overview" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.overview.content, data.overview.source, 'overview')} id="overview" >OVERVIEW</button>
         </div>
         <div  className="infoSelectItem">
-          <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "structure" ? `2px solid ${data.color}` : ''}}   onClick={() => handleClick(data.structure.content, data.structure.source, 'structure')} id="structure" >02&nbsp;&nbsp;&nbsp;&nbsp; STRUCTURE</button>
+          <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "structure" ? `2px solid ${data.color}` : ''}}   onClick={() => handleClick(data.structure.content, data.structure.source, 'structure')} id="structure" > STRUCTURE</button>
         </div>
         <div className="infoSelectItem">
-        <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "surface" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.geology.content, data.geology.source,'surface')} id="surface">03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SURFACE</button>
+        <button onMouseLeave={(e) => mouseLeave(e)} onMouseOver={(e) => mouseOver(e)} style={{borderBottom: activeElement === "surface" ? `2px solid ${data.color}` : ''}}    onClick={() => handleClick(data.geology.content, data.geology.source,'surface')} id="surface">SURFACE</button>
         </div>
       </div>
 

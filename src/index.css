@@ -33,6 +33,9 @@ body {
 
 
 @media screen and (min-width: 1px) and (max-width: 768px) {
+  .num{
+    display: none
+  }
   .chevron{
     margin-left: auto;
     padding-bottom: 2rem;
@@ -48,9 +51,15 @@ body {
     background: transparent;
     border: none;
     color: #38384F;
+    
   }
-  .infoSelectItem:hover button{
-    color:white
+  button:hover{
+    background-color: transparent !important;
+    color: white
+   
+  }
+  .infoSelectItem button:hover{
+    color: none !important
   }
 
   
@@ -183,8 +192,9 @@ body {
 
 
   .wrapper{
+
     display: grid;
-    grid-template-rows: 30vh 48vh 12vh;
+    grid-template-rows: 2fr 2fr .5fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "pic pic"
@@ -215,17 +225,13 @@ body {
     display: flex;
     margin-left: 5rem;
     height: 100%;
-    padding: .5em;
+    padding: .75em;
     width: 100%;
     background-color: transparent;
-    border-color: #38384F !important;
+    border: 3px solid #38384F !important;
     color: white;
     font-size: clamp(1rem, 1vw + 1rem, 3rem)
   }
-  .infoSelectItem>button>div{
-    margin-left: 2rem;
-  }
-
 
   .descriptBox{
     display: flex;
@@ -233,7 +239,6 @@ body {
     max-height: 100%;
     padding: 0 2rem;
     justify-content: center;
-
     overflow: auto;
   }
   .descriptBox>p{
@@ -245,8 +250,8 @@ body {
   .surfaceImg{
     position: absolute;
     z-index: 2;
-    max-height: 10%;
-    margin-top: 10rem;
+    max-height: 35%;
+    align-self: flex-end;
   }
 
   .stats{
@@ -255,17 +260,24 @@ body {
     justify-content: space-between;
     max-height: 100%;
     margin-bottom: 1rem;
+    align-self: flex-start
   }
   .statsItem{
-    border: 1px solid gray;
+    border: 3px solid #38384F !important;
     width: 25%;
     margin: 0 1rem;
+    min-height: 100px;
+    padding: 1rem;
   }
   .statsItem h3{
-    font-size: clamp(.5rem, 1vw + 1.5rem, 5rem)
+    font-size: clamp(1rem, 1vw + 1.5rem, 5rem);
+    letter-spacing: .15rem;
   }
   .statsItem h4{
-    font-size: clamp(.5rem, 1vw + 1rem, 5rem)
+    font-size: clamp(1rem, 90%, 5rem);
+      letter-spacing: .10rem;
+      color: gray;
+    
   }
   .nav{
     display: flex;
@@ -274,6 +286,7 @@ body {
   }
 
   .planetDiv{
+    position: relative;
 
     display:flex;
     justify-content: center;
@@ -295,16 +308,44 @@ body {
     justify-content: center;
     max-height: 10vh;
   }
-  .statsItem{
-    
-  }
+
 }
 
 @media screen and (min-width: 1440px){
+  .surfaceImg{
+    position: absolute;
+    z-index: 2;
+    max-height: 20%;
+    margin-top: 40%;
+  }
+  .infoSelectItem button{
+    font-size: 1.5rem;
+    letter-spacing: .12rem;
+    display: flex;
+    padding-top: .75em;
+    padding-left: 2rem;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: 3px solid #38384F !important;
+    background-color: transparent;
+  }
+  .hamburgerIcon{
+    display: none;
+  }
   .infoSelectItem{
+    border: none !important;
     height: 20%;
     border: 1px solid gray;
     margin-top: 1rem;
+  }
+  .infoSelectItem button{
+    display: flex;
+  }
+  button div{
+    text-align: center;
+    padding-top: 1rem;
   }
   .descriptBox{
     display: flex;
@@ -313,7 +354,18 @@ body {
     justify-content: flex-end;
     height: 100%
   }
+  .statsItem h4{
+    font-size: 90%;
+    letter-spacing: .15rem;
+    color: gray;
+  }
+  .descriptBox p{
+    font-family: 'League Spartan', sans-serif;
+    font-size: clamp(.5rem, 1vw + .5rem, 2rem)
+  }
+
   .planetDiv{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,7 +387,7 @@ body {
   }
   .wrapper{
     padding: 0% 10% 0% 10%;
-    display:grid;
+    display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 40vh 40vh 10vh;
     grid-template-areas: 
@@ -350,9 +402,10 @@ body {
     justify-content: space-between;
   }
   .statsItem{
-    border: 1px solid gray;
+    border: 3px solid #38384F !important;
     max-height: 100%;
-    width: 24%
+    width: 24%;
+    padding: 1rem;
   }
 
 }
