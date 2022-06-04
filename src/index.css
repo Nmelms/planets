@@ -32,7 +32,7 @@ body {
 
 
 
-@media screen and (min-width: 1px) and (max-width: 768px) {
+@media screen and (min-width: 1px) and (max-width: 600px) {
   .num{
     display: none
   }
@@ -184,7 +184,7 @@ body {
 
 }
 
-@media screen and (min-width: 769px ) and (max-width: 1439px) {
+@media screen and (min-width: 601px ) and (max-width: 1000px) {
   .navCol{
     flex-direction: column;
     align-items: center;
@@ -311,7 +311,13 @@ body {
 
 }
 
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1001px){
+  .navBar{
+    max-height: 10vh;
+  }
+  .planetImg{
+    max-height: 80%;
+  }
   .surfaceImg{
     position: absolute;
     z-index: 2;
@@ -321,8 +327,8 @@ body {
   .infoSelectItem button{
     font-size: 1.5rem;
     letter-spacing: .12rem;
+    text-align: center;
     display: flex;
-    padding-top: .75em;
     padding-left: 2rem;
     text-align: center;
     width: 100%;
@@ -342,6 +348,7 @@ body {
   }
   .infoSelectItem button{
     display: flex;
+    font-size: camp(1rem, 1rem + 1vh, 2rem)
   }
   button div{
     text-align: center;
@@ -389,7 +396,7 @@ body {
     padding: 0% 10% 0% 10%;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 40vh 40vh 10vh;
+    grid-template-rows: 2fr 2fr .5fr;
     grid-template-areas: 
       "pic details"
       "pic infoSelect"
@@ -397,13 +404,13 @@ body {
     height: 90vh;
   }
   .stats{
+    max-height: 100%;
     display: flex;
     align-self: flex-end;
     justify-content: space-between;
   }
   .statsItem{
     border: 3px solid #38384F !important;
-    max-height: 100%;
     width: 24%;
     padding: 1rem;
   }
