@@ -6,3 +6,8 @@ One of the hardest parts of this project was making sure all the hover colors fo
 <h2>How To Use This App</h2>
 
 Just open the menu, click on a planet, and learn a quick fact.
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f67d86c636b87e4c4cdd0ce0aed4bc628d298e14
