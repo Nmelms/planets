@@ -292,12 +292,13 @@ body {
   }
   .navBar {
     padding-top: 1rem;
+    padding-bottom: 0;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-bottom: 1px solid #38384f;
-    max-height: 40vh;
   }
   .planetLinks {
     width: 100vw;
@@ -373,6 +374,7 @@ body {
     padding-top: 1rem;
   }
   .descriptBox {
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -419,17 +421,19 @@ body {
       "pic details"
       "pic infoSelect"
       "stats stats";
-    height: 90vh;
+    height: 100%;
   }
   .stats {
-    max-height: 100%;
     display: flex;
     align-self: flex-end;
     justify-content: space-between;
+    padding-bottom: 1rem;
+    width: 100%;
   }
   .statsItem {
+    margin-top: 0.5rem;
     border: 3px solid #38384f !important;
-    width: 24%;
+    width: 25%;
     padding: 1rem;
   }
 }
