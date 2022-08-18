@@ -6,13 +6,11 @@ import Layout from "./Layout";
 
 export default function Mercury({ data }) {
   return (
-    <div>
-      <Layout
-        surfaceImg={surfaceImg}
-        internalImg={internalImg}
-        planetImg={planetImg}
-        data={data}
-      />
-    </div>
+    <Layout
+      surfaceImg={surfaceImg}
+      internalImg={internalImg}
+      planetImg={planetImg}
+      data={data}
+    />
   );
 }
