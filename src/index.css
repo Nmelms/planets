@@ -9,6 +9,17 @@ body {
 
 .navBar {
   color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.navLink {
+  text-decoration: none;
+  color: white;
+  display: none;
+}
+.navTitle {
+  display: block;
 }
 
 .planetDiv {
@@ -75,9 +86,7 @@ body {
     width: 100vw !important;
   }
   .hamburgerIcon {
-    height: auto;
-    width: 10vw;
-    margin-left: auto;
+    padding: 0.5rem;
   }
   .hamburgerIcon:hover {
     cursor: pointer;
@@ -281,25 +290,38 @@ body {
     width: 100vw;
   }
   .navBar {
+    padding-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
     max-height: 40vh;
+  }
+  .planetLinks {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+  }
+  .navLink {
+    display: block;
   }
 }
 
 @media screen and (min-width: 1001px) {
   .navBar {
-    height: 10vh;
+    height: fit-content;
     display: flex;
     min-height: fit-content;
     justify-content: space-between;
     padding: 1rem 1rem 0 1rem;
+    border-bottom: 1px solid gray;
   }
   .navLink {
-    text-decoration: none;
-    color: white;
+    display: block;
   }
+
   .planetLinks {
     display: flex;
     margin: 0.5rem;

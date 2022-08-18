@@ -25,7 +25,7 @@ export default function NavBar({ handleClick }) {
         </Row>
       </Navbar> */}
       <h2>
-        <Link className="navLink" to="/">
+        <Link className="navLink navTitle" to="/">
           THE PLANETS
         </Link>
       </h2>
@@ -55,6 +55,12 @@ export default function NavBar({ handleClick }) {
           NEPTUNE
         </Link>
       </div>
+      <img
+        alt="menu icon"
+        onClick={() => handleClick()}
+        className="hamburgerIcon"
+        src={hamburgerIcon}
+      />
     </nav>
   );
 }
