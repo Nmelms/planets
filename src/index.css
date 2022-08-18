@@ -11,6 +11,7 @@ body {
   color: #ffffff;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #38384f;
   padding: 1rem;
 }
 .navLink {
@@ -295,7 +296,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #38384f;
     max-height: 40vh;
   }
   .planetLinks {
@@ -316,7 +317,7 @@ body {
     min-height: fit-content;
     justify-content: space-between;
     padding: 1rem 1rem 0 1rem;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #38384f;
   }
   .navLink {
     display: block;
