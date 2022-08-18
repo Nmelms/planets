@@ -6,13 +6,11 @@ import Layout from "./Layout.js";
 
 export default function Jupiter({ data }) {
   return (
-    <div>
-      <Layout
-        surfaceImg={surfaceImg}
-        internalImg={internalImg}
-        planetImg={planetImg}
-        data={data}
-      />
-    </div>
+    <Layout
+      surfaceImg={surfaceImg}
+      internalImg={internalImg}
+      planetImg={planetImg}
+      data={data}
+    />
   );
 }
