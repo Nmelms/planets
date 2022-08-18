@@ -10,7 +10,7 @@ export default function MobileMenu({ data, menuActive, setMenuActive }) {
     if (name === "Earth") {
       navigate("/");
     } else {
-      navigate(`/ + ${name.toLowerCase()}`);
+      navigate("/" + `${name.toLowerCase()}`);
     }
   };
 
