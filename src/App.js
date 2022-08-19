@@ -13,30 +13,37 @@ import data from "./data/data.json";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [menuActive, setMenuActive] = useState(false);
+  const [menuState, setMenuState] = useState("menuClosed");
 
-  useEffect(() => {
-    if (menuActive) {
-      document.querySelector(".wrapper").style.display = "none";
-    } else {
-      document.querySelector(".wrapper").style.display = "grid";
-    }
-  }, [menuActive]);
+  // useEffect(() => {
+  //   if (menuActive) {
+  //     document.querySelector(".wrapper").style.display = "none";
+  //   } else {
+  //     document.querySelector(".wrapper").style.display = "grid";
+  //   }
+  // }, [menuActive]);
 
   const handleClick = () => {
-    setMenuActive(!menuActive);
+    console.log("click");
+    menuState === "menuClosed"
+      ? document.body.classList.add("no-scroll")
+      : document.body.classList.remove("no-scroll");
+
+    menuState === "menuClosed"
+      ? setMenuState("menuOpen")
+      : setMenuState("menuClosed");
   };
 
   return (
     <Router>
+      <MobileMenu
+        menuState={menuState}
+        // menuActive={menuActive}
+        // setMenuActive={setMenuActive}
+        data={data}
+      />
       <NavBar handleClick={handleClick} />
-      {menuActive && (
-        <MobileMenu
-          menuActive={menuActive}
-          setMenuActive={setMenuActive}
-          data={data}
-        />
-      )}
+
       <Routes>
         <Route path="/" element={<Earth data={data[2]} />} />
         <Route path="/mars" element={<Mars data={data[3]} />} />

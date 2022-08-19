@@ -2,7 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router";
 import chevron from "../assets/icon-chevron.svg";
 
-export default function MobileMenu({ data, menuActive, setMenuActive }) {
+export default function MobileMenu({
+  data,
+  menuState,
+  menuActive,
+  setMenuActive,
+}) {
   let navigate = useNavigate();
 
   const handleMobileClick = (name) => {
@@ -15,7 +20,7 @@ export default function MobileMenu({ data, menuActive, setMenuActive }) {
   };
 
   return (
-    <div className="menu">
+    <div className={menuState}>
       {data.map((item, index) => {
         return (
           <div

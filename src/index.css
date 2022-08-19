@@ -6,18 +6,25 @@ body {
   margin: 0;
   max-width: 2600px;
 }
-
+.no-scroll {
+  overflow: hidden;
+}
 .navBar {
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #38384f;
   padding: 1rem;
+  z-index: 100;
 }
 .navLink {
   text-decoration: none;
   color: white;
   display: none;
+  transition: 0.3s;
+}
+.navLink:hover {
+  color: blue;
 }
 .navTitle {
   display: block;
@@ -43,6 +50,11 @@ body {
 }
 
 @media screen and (min-width: 1px) and (max-width: 600px) {
+  .navBar {
+    z-index: 100;
+    position: relative;
+    top: 0;
+  }
   .num {
     display: none;
   }
@@ -50,8 +62,43 @@ body {
     margin-left: auto;
     padding-bottom: 2rem;
   }
-  .menu {
-    padding: 0 2rem 0 2rem;
+  .menuOpen {
+    padding-top: 10vh;
+    position: fixed;
+    top: -100vh;
+    background-color: transparent;
+    background-color: gray;
+    height: 100%;
+    width: 100vw;
+    z-index: 2;
+    animation: open 0.75s ease-in-out forwards;
+  }
+  .menuClosed {
+    padding-top: 10vh;
+    position: fixed;
+    z-index: 2;
+    max-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: gray;
+    animation: closed 0.75s ease-in forwards;
+  }
+  @keyframes open {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  @keyframes closed {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
   }
   .srcIcon {
     padding-left: 0.1rem;
