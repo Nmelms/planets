@@ -74,7 +74,7 @@ body {
     height: 100%;
     width: 100vw;
     z-index: 2;
-    animation: open 0.75s ease-in-out forwards;
+    animation: open 0.5s ease-in-out forwards;
   }
   .menuClosed {
     background-color: #070724;
@@ -86,7 +86,7 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    animation: closed 0.75s ease-in forwards;
+    animation: closed 0.5s ease-in forwards;
   }
   @keyframes open {
     0% {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router";
 import chevron from "../assets/icon-chevron.svg";
 
@@ -7,11 +7,18 @@ export default function MobileMenu({
   menuState,
   menuActive,
   setMenuActive,
+  setMenuState,
 }) {
   let navigate = useNavigate();
+  const menuRef = useRef();
 
   const handleMobileClick = (name) => {
-    setMenuActive(!menuActive);
+    console.log("click");
+    setMenuState("menuClosed");
+    // menuRef.current.classList.remove("menuOpen");
+    // menuRef.current.classList.add("menuClosed");
+
+    document.body.classList.remove("no-scroll");
     if (name === "Earth") {
       navigate("/");
     } else {
@@ -20,7 +27,7 @@ export default function MobileMenu({
   };
 
   return (
-    <div className={menuState}>
+    <div ref={menuRef} className={menuState}>
       {data.map((item, index) => {
         return (
           <div

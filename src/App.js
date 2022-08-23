@@ -26,18 +26,19 @@ function App() {
   const handleClick = () => {
     console.log("click");
     menuState === "menuClosed"
-      ? document.body.classList.add("no-scroll")
-      : document.body.classList.remove("no-scroll");
-
-    menuState === "menuClosed"
       ? setMenuState("menuOpen")
       : setMenuState("menuClosed");
+
+    menuState === "menuClosed"
+      ? document.body.classList.add("no-scroll")
+      : document.body.classList.remove("no-scroll");
   };
 
   return (
     <Router>
       <MobileMenu
         menuState={menuState}
+        setMenuState={setMenuState}
         // menuActive={menuActive}
         // setMenuActive={setMenuActive}
         data={data}
