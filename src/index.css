@@ -9,6 +9,7 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
 .navBar {
   background-color: #070724;
   background-image: url("./assets/background-stars.svg");
@@ -70,7 +71,6 @@ body {
     padding-top: 10vh;
     position: fixed;
     top: -100vh;
-
     height: 100%;
     width: 100vw;
     z-index: 2;
@@ -363,9 +363,21 @@ body {
   .navLink {
     display: block;
   }
+  .menuClosed {
+    display: none;
+  }
+  .menuOpen {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1001px) {
+  .menuClosed {
+    display: none;
+  }
+  .menuOpen {
+    display: none;
+  }
   .navBar {
     height: fit-content;
     display: flex;
