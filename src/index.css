@@ -10,6 +10,8 @@ body {
   overflow: hidden;
 }
 .navBar {
+  background-color: #070724;
+  background-image: url("./assets/background-stars.svg");
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -63,17 +65,20 @@ body {
     padding-bottom: 2rem;
   }
   .menuOpen {
+    background-color: #070724;
+    background-image: url("./assets/background-stars.svg");
     padding-top: 10vh;
     position: fixed;
     top: -100vh;
-    background-color: transparent;
-    background-color: gray;
+
     height: 100%;
     width: 100vw;
     z-index: 2;
     animation: open 0.75s ease-in-out forwards;
   }
   .menuClosed {
+    background-color: #070724;
+    background-image: url("./assets/background-stars.svg");
     padding-top: 10vh;
     position: fixed;
     z-index: 2;
@@ -81,7 +86,6 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background-color: gray;
     animation: closed 0.75s ease-in forwards;
   }
   @keyframes open {
@@ -338,6 +342,8 @@ body {
     width: 100vw;
   }
   .navBar {
+    background-color: #070724;
+    background-image: url("./assets/background-stars.svg");
     padding-top: 1rem;
     padding-bottom: 0;
     height: fit-content;
