@@ -8,9 +8,10 @@ export default function MobileMenu({
   menuActive,
   setMenuActive,
   setMenuState,
+  mobileMenuRef,
 }) {
   let navigate = useNavigate();
-  const menuRef = useRef();
+  // const menuRef = useRef();
 
   const handleMobileClick = (name) => {
     console.log("click");
@@ -27,7 +28,7 @@ export default function MobileMenu({
   };
 
   return (
-    <div ref={menuRef} className={menuState}>
+    <div ref={mobileMenuRef} className={menuState}>
       {data.map((item, index) => {
         return (
           <div

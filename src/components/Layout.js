@@ -28,6 +28,7 @@ export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
             onMouseLeave={(e) => mouseLeave(e)}
             onMouseOver={(e) => mouseOver(e)}
             style={{
+              color: activeElement === "overview" ? `white` : "",
               borderBottom:
                 activeElement === "overview" ? `2px solid ${data.color}` : "",
             }}
@@ -48,6 +49,7 @@ export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
             onMouseLeave={(e) => mouseLeave(e)}
             onMouseOver={(e) => mouseOver(e)}
             style={{
+              color: activeElement === "structure" ? `white` : "",
               borderBottom:
                 activeElement === "structure" ? `2px solid ${data.color}` : "",
             }}
@@ -69,6 +71,7 @@ export default function Layout({ data, planetImg, internalImg, surfaceImg }) {
             onMouseLeave={(e) => mouseLeave(e)}
             onMouseOver={(e) => mouseOver(e)}
             style={{
+              color: activeElement === "surface" ? "white" : "",
               borderBottom:
                 activeElement === "surface" ? `2px solid ${data.color}` : "",
             }}

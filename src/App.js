@@ -10,10 +10,11 @@ import Uranus from "./components/Uranus";
 import MobileMenu from "./components/MobileMenu";
 import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import data from "./data/data.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function App() {
   const [menuState, setMenuState] = useState("menuClosed");
+  const mobileMenuRef = useRef();
 
   // useEffect(() => {
   //   if (menuActive) {
@@ -25,6 +26,7 @@ function App() {
 
   const handleClick = () => {
     console.log("click");
+    mobileMenuRef.current.style.display = "block";
     menuState === "menuClosed"
       ? setMenuState("menuOpen")
       : setMenuState("menuClosed");
@@ -37,6 +39,7 @@ function App() {
   return (
     <Router>
       <MobileMenu
+        mobileMenuRef={mobileMenuRef}
         menuState={menuState}
         setMenuState={setMenuState}
         // menuActive={menuActive}
